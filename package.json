@@ -1,0 +1,7 @@
+{
+  "name": "solve-wordle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tim Buckley <timothypbuckley@gmail.com>",
+  "license": "MIT"
+}
