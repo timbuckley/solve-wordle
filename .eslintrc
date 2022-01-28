@@ -1,0 +1,102 @@
+{
+  "env": {
+    "cypress/globals": true,
+    "es6": true,
+    "jest/globals": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@getify/proper-arrows",
+    "@typescript-eslint",
+    "cypress",
+    "jest",
+    "prettier",
+    "react-hooks",
+    "react",
+    "sort-destructure-keys",
+    "sort-keys-fix",
+    "typescript-sort-keys",
+    "import",
+    "unused-imports",
+    "sort-export-all"
+  ],
+  "rules": {
+    "@getify/proper-arrows/name": ["off"],
+    "@getify/proper-arrows/params": ["off"],
+    "@getify/proper-arrows/return": ["off"],
+    "@getify/proper-arrows/this": ["off"],
+    "@getify/proper-arrows/where": ["off"],
+    "unused-imports/no-unused-imports": ["error"],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": true }
+    ],
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "eslint@typescript-eslint/no-empty-function": ["off"],
+    "func-style": ["warn", "declaration"],
+    "import/no-cycle": ["off"],
+    "import/no-default-export": ["warn"],
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "no-else-return": ["warn"],
+    "no-unused-vars": ["off"],
+    "prettier/prettier": ["error", { "arrowParens": "avoid" }],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "sort-destructure-keys/sort-destructure-keys": "error",
+    "sort-export-all/sort-export-all": ["warn", "asc", { "caseSensitive": true, "natural": true }],
+    "sort-imports": ["warn", { "ignoreCase": true, "ignoreDeclarationSort": true }],
+    "sort-keys-fix/sort-keys-fix": ["warn", "asc", { "natural": true }],
+    "typescript-sort-keys/interface": [
+      "warn",
+      "asc",
+      { "caseSensitive": false, "natural": true, "requiredFirst": true }
+    ],
+    "typescript-sort-keys/string-enum": ["warn", "asc", { "caseSensitive": false, "natural": true }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.graphql"],
+      "parser": "@graphql-eslint/eslint-plugin",
+      "plugins": ["@graphql-eslint"],
+      "rules": {
+        "@graphql-eslint/known-type-names": "error",
+        "@graphql-eslint/no-unreachable-types": "error"
+      },
+      "parserOptions": {
+        "schema": "./packages/common/src/graphql/schema/**/*.graphql"
+      }
+    }
+  ]
+}
