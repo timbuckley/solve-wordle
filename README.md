@@ -18,6 +18,7 @@ In a `ts-node` REPL:
 import {WorldeSolver} from '.'; var s = new WordleSolver();
 
 // Guesses and their scoring can be chained together statefully to shrink down the corpus as scores are appended.
+// Scores are 5-letter strings of `x` for an exact match, `i` for a letter to be included, and `e` for letters to be excluded.
 
 s.score('irate', 'eeeee').score('lousy', 'ixiee').getBestGuess()
 // Returns 'mogul'. Or, just omit `.getBestGuess()` to see the reduced `corpus` over time.
