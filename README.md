@@ -26,5 +26,5 @@ s.score('irate', 'eeeee').score('lousy', 'ixiee').getBestGuess()
 
 ## Future work
 
-Best starting word is along the lines of: `irate`, `later`, or possibly `adieu`. Full analysis would require comparing different solve strategies with different solving words across the corpus of target words. This is left as an exercise to the reader.
-
+- Best starting word is along the lines of: `irate`, `later`, or possibly `adieu`. Full analysis would require comparing different solve strategies with different solving words across the corpus of target words. This is left as an exercise to the reader.
+- Find common consonant clusters, front and back. This makes it easier to figure out what to do if the midpoint of the word is found to be a vowel.
